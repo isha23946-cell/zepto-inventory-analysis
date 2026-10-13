@@ -20,3 +20,12 @@ LIMIT 10;
 UNION ALL
 (SELECT 'Priciest', product_name, weight_g, selling_price, price_per_100g
  FROM zepto_clean WHERE price_per_100g IS NOT NULL ORDER BY price_per_100g DESC LIMIT 5);
+
+-- Q4: Out-of-stock and low-stock rate by discount band
+SELECT discount_band,
+       COUNT(*) AS products,
+       ROUND(100.0 * SUM(CASE WHEN out_of_stock THEN 1 ELSE 0 END) / COUNT(*), 1) AS out_of_stock_pct,
+       ROUND(100.0 * SUM(CASE WHEN stock_status = 'Low stock' THEN 1 ELSE 0 END) / COUNT(*), 1) AS low_stock_pct
+FROM zepto_clean
+GROUP BY discount_band
+ORDER BY MIN(discount_percent);
