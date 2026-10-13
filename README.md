@@ -39,8 +39,27 @@ Several categories contain exactly the same products (for example Cooking Essent
 ## Tools
 PostgreSQL, Python (pandas, matplotlib, seaborn), Power BI, Git and GitHub
 
+
+
 ## Key insights
-_To be added after the analysis._
+
+1. **Fruits & Vegetables has the deepest discounts** (15.5 percent on average) and a low out-of-stock rate (6.5 percent).
+2. **Biscuits has the highest out-of-stock rate** (28.6 percent) even though its average discount is only 8.2 percent, so this looks like a stock availability issue, not a pricing one.
+3. **Heavy discounting does not appear to drive stock-outs.** Products with no discount were out of stock most often (16.0 percent), while products discounted 11-20 percent were out of stock least often (6.1 percent). This is a single snapshot, so it shows an association, not a cause.
+4. **Some deeply discounted products have no stock.** Several items discounted 40-50 percent show zero available units.
+
+![Average discount by category](images/avg_discount_by_category.png)
+
+![Out-of-stock rate by discount band](images/out_of_stock_by_discount_band.png)
 
 ## Recommendations
-_To be added after the analysis._
+
+1. **Review stock levels for Biscuits.** It has the highest out-of-stock rate (28.6 percent), and discounts do not explain it, so replenishment is the first thing to check.
+2. **Check deeply discounted products with zero stock.** Promotions running on unavailable items (for example 50 percent off yogurt and pasta) can disappoint customers and waste promotional effort.
+3. **Test discounts before expanding them.** Products discounted 11-20 percent had the lowest stock-out rate, so a controlled test of discount depth would show whether discounts help or only coincide with healthy stock.
+4. **Fix the product data.** Products are listed under several categories and weights mix grams, millilitres and piece counts. Cleaning this at the source would make category and price-per-unit analysis reliable.
+
+## Limitations
+- This is a single snapshot of listings, with no sales or time data, so results show associations and not causes.
+- Inventory value is an estimate (price times available quantity), and available quantity only reaches 6 in this data.
+- Several categories contain identical product lists, so category comparisons focus on the five distinct ones.
