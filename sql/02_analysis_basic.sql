@@ -7,3 +7,16 @@ FROM category_map m
 JOIN zepto_clean c ON c.product_id = m.product_id
 GROUP BY m.category
 ORDER BY avg_discount DESC;
+
+-- Q2: Top 10 products by estimated inventory value (selling price x available quantity)
+SELECT product_name, primary_category, selling_price, available_qty, inventory_value
+FROM zepto_clean
+ORDER BY inventory_value DESC
+LIMIT 10;
+
+-- Q3: Cheapest and priciest products per 100 g (weight_g has mixed units, so read with care)
+(SELECT 'Cheapest' AS type, product_name, weight_g, selling_price, price_per_100g
+ FROM zepto_clean WHERE price_per_100g IS NOT NULL ORDER BY price_per_100g ASC LIMIT 5)
+UNION ALL
+(SELECT 'Priciest', product_name, weight_g, selling_price, price_per_100g
+ FROM zepto_clean WHERE price_per_100g IS NOT NULL ORDER BY price_per_100g DESC LIMIT 5);
