@@ -63,3 +63,9 @@ PostgreSQL, Python (pandas, matplotlib), an HTML dashboard, Git and GitHub
 - This is a single snapshot of listings, with no sales or time data, so results show associations and not causes.
 - Inventory value is an estimate (price times available quantity), and available quantity only reaches 6 in this data.
 - Several categories contain identical product lists, so category comparisons focus on the five distinct ones.
+
+## Dashboard
+
+A summary dashboard of the cleaned data: KPI cards (products, average discount, out-of-stock and low-stock rates), category and discount-band charts, and a list of heavily discounted products that are low or out of stock.
+
+![Zepto dashboard](images/dashboard.png)
