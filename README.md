@@ -1,6 +1,6 @@
 # Zepto Inventory & Pricing Analysis
 
-An end-to-end data analysis project on Zepto product listings, using SQL (PostgreSQL), Python (pandas) and Power BI.
+An end-to-end data analysis project on Zepto product listings, using SQL (PostgreSQL), Python (pandas) and an interactive dashboard.
 
 ## Business questions
 - Which categories offer the deepest discounts?
@@ -32,12 +32,12 @@ Several categories contain exactly the same products (for example Cooking Essent
 - data/ : raw and cleaned CSV files
 - sql/ : schema and analysis queries
 - notebooks/ : Python EDA
-- dashboard/ : Power BI file and screenshots
+- dashboard/ : interactive dashboard
 - images/ : charts used in this README
 - clean_zepto.py : data cleaning script
 
 ## Tools
-PostgreSQL, Python (pandas, matplotlib, seaborn), Power BI, Git and GitHub
+PostgreSQL, Python (pandas, matplotlib), an HTML dashboard, Git and GitHub
 
 
 
